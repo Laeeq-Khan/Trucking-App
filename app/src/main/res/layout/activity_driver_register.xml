@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_driver_register"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Driver.DriverRegister"
+    android:background="@color/backgroudColor">
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/backgroudColor"
+            android:focusable="true"
+
+            android:focusableInTouchMode="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:context=".Driver.DriverRegister">
+
+
+            <EditText
+                android:id="@+id/dRegisterName"
+                android:layout_width="340dp"
+                android:layout_height="44dp"
+                android:layout_below="@+id/dRegisterPassword"
+                android:layout_alignStart="@+id/dRegisterPhone"
+                android:backgroundTint="@color/textColor"
+                android:ems="10"
+                android:hint="Name"
+                android:inputType="textPersonName"
+                android:textColor="@color/textColor"
+                android:textColorHint="@color/textColor"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="parent" />
+
+            <EditText
+                android:id="@+id/dRegisterPassword"
+                android:layout_width="340dp"
+                android:layout_height="44dp"
+                android:layout_below="@+id/dRegisterEmail"
+                android:layout_alignStart="@+id/dRegisterName"
+                android:backgroundTint="@color/textColor"
+                android:ems="10"
+                android:hint="Password"
+                android:inputType="textPassword"
+                android:textColor="@color/textColor"
+                android:textColorHint="@color/textColor"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="parent" />
+
+            <ImageView
+                android:id="@+id/imageView9"
+                android:layout_width="245dp"
+                android:layout_height="108dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="97dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="69dp"
+                app:srcCompat="@drawable/truck_it_logo" />
+
+            <EditText
+                android:id="@+id/dRegisterEmail"
+                android:layout_width="340dp"
+                android:layout_height="44dp"
+                android:layout_alignStart="@+id/dRegisterPassword"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="116dp"
+                android:backgroundTint="@color/textColor"
+                android:ems="10"
+                android:hint="Email"
+                android:inputType="textEmailAddress"
+                android:textColor="@color/textColor"
+                android:textColorHint="@color/textColor"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/dRegisterPhone"
+                android:layout_width="340dp"
+                android:layout_height="44dp"
+                android:layout_below="@+id/dRegisterName"
+                android:layout_alignStart="@+id/dCreateAccount"
+                android:backgroundTint="@color/textColor"
+                android:ems="10"
+                android:hint="Phone Number"
+                android:inputType="phone"
+                android:textColor="@color/textColor"
+                android:textColorHint="@color/textColor"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="parent" />
+
+            <EditText
+                android:id="@+id/dRegisterLicense"
+                android:layout_width="340dp"
+                android:layout_height="44dp"
+                android:layout_below="@+id/dRegisterPhone"
+                android:layout_alignStart="@+id/dRegisterPhone"
+                android:backgroundTint="@color/textColor"
+                android:ems="10"
+                android:hint="Driver's Licence"
+                android:inputType="number"
+                android:textColor="@color/textColor"
+                android:textColorHint="@color/textColor"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="parent" />
+
+            <EditText
+                android:id="@+id/dRegisterCnic"
+                android:layout_width="340dp"
+                android:layout_height="44dp"
+                android:layout_below="@+id/dRegisterLicense"
+                android:layout_alignStart="@+id/dRegisterLicense"
+                android:backgroundTint="@color/textColor"
+                android:ems="10"
+                android:hint="Cnic"
+                android:inputType="text"
+                android:textColor="@color/textColor"
+                android:textColorHint="@color/textColor"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="parent" />
+
+            <RadioGroup
+                android:id="@+id/radioGroup2"
+                android:layout_width="340dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/dRegisterCnic"
+                android:layout_alignStart="@+id/dCreateAccount"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/dSmallPickup"
+                    android:layout_width="wrap_content"
+                    android:layout_height="44dp"
+                    android:layout_weight="1"
+                    android:buttonTint="@color/textColor"
+                    android:text="Small Pickup"
+                    android:textColor="@color/textColor" />
+
+                <RadioButton
+                    android:id="@+id/dMediumTruck"
+                    android:layout_width="wrap_content"
+                    android:layout_height="44dp"
+                    android:layout_weight="1"
+                    android:buttonTint="@color/textColor"
+                    android:text="medium truck"
+                    android:textColor="@color/textColor" />
+
+                <RadioButton
+                    android:id="@+id/dLargeTruck"
+                    android:layout_width="wrap_content"
+                    android:layout_height="44dp"
+                    android:layout_weight="1"
+                    android:buttonTint="@color/textColor"
+                    android:text="Large Truck"
+                    android:textColor="@color/textColor" />
+
+            </RadioGroup>
+
+            <Button
+                android:id="@+id/dCreateAccount"
+                android:layout_width="340dp"
+                android:layout_height="49dp"
+                android:layout_below="@+id/dRegisterCnic"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="51dp"
+                android:layout_marginTop="83dp"
+                android:layout_marginEnd="19dp"
+                android:background="@color/buttonColor"
+                android:text="Create Account"
+                android:textColor="@color/textColor"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="parent" />
+
+
+        </RelativeLayout>
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/dAlreadyAccount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Already Have an Account? Click Here"
+        android:textColor="@color/textColor"
+        app:layout_constraintHorizontal_bias="0.563"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView2" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+

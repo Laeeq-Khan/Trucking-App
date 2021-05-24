@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/companyDriverRequests"
+            android:icon="@drawable/add_driver"
+            android:title="DriverRequests" />
+
+    </group>
+    <item android:title="Orders_Details">
+        <menu>
+            <item
+                android:id="@+id/progressingOrders"
+                android:icon="@drawable/ic_menu_slideshow"
+                android:title="ProgressingOrders" />
+            <item
+                android:id="@+id/history"
+                android:icon="@drawable/ic_menu_gallery"
+                android:title="History" />
+        </menu>
+    </item>
+
+    <item android:title="Users_Details">
+        <menu>
+            <item
+                android:id="@+id/registeredDrivers"
+                android:icon="@drawable/ic_menu_gallery"
+                android:title="RegisteredDrivers" />
+            <item
+                android:id="@+id/registeredCustomers"
+                android:icon="@drawable/ic_menu_slideshow"
+                android:title="RegisteredCustomers" />
+            <item
+                android:id="@+id/suspendedDrivers"
+                android:icon="@drawable/ic_menu_manage"
+                android:title="SuspendedDrivers" />
+        </menu>
+    </item>
+    <item android:title="Setting">
+        <menu>
+            <item
+                android:id="@+id/settings"
+                android:icon="@drawable/ic_menu_gallery"
+                android:title="Settings" />
+
+        </menu>
+    </item>
+
+</menu>

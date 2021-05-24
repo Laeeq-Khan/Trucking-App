@@ -1,0 +1,466 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/makeorderfragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="false">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".Customer.MakeOrder">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="29dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="29dp"
+            android:text="Location" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <HorizontalScrollView
+                        android:id="@+id/pickupLocation"
+                        android:layout_width="216dp"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="29dp"
+                        android:layout_marginTop="40dp">
+
+                        <TextView
+                            android:id="@+id/pickupLocation_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:hint="pickup_location"
+                            android:inputType="textPostalAddress"
+
+                            android:maxLines="1"
+                            android:padding="10dip"
+                            android:scrollHorizontally="true"
+                            android:textSize="18sp" />
+
+
+                    </HorizontalScrollView>
+
+                    <Button
+                        android:id="@+id/pickup_btn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="40dp"
+                        android:layout_marginTop="40dp"
+
+                        android:onClick="startPickupSelectLocationActivity"
+                        android:text="Set/Edit" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <HorizontalScrollView
+                        android:id="@+id/deliveryLocation"
+                        android:layout_width="216dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="29dp"
+                        android:layout_marginTop="20dp">
+
+                        <TextView
+                            android:id="@+id/deliveryLocation_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:hint="delivery_location"
+                            android:inputType="textPostalAddress"
+
+                            android:maxLines="1"
+                            android:padding="10dip"
+                            android:scrollHorizontally="true"
+                            android:textSize="18sp" />
+                    </HorizontalScrollView>
+
+                    <Button
+                        android:id="@+id/dropoff_btn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="40dp"
+                        android:layout_marginTop="20dp"
+                        android:onClick="startDeliverySelectLocationActivity"
+                        android:text="Set/Edit" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="29dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginRight="29dp"
+            android:text="Customer Info" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/orderName"
+                    android:layout_width="216dp"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginLeft="29dp"
+                    android:layout_marginTop="20dp"
+                    android:ems="10"
+                    android:hint="unique Name For Order"
+                    android:inputType="textPersonName" />
+
+                <EditText
+                    android:id="@+id/customerName"
+                    android:layout_width="216dp"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginLeft="29dp"
+                    android:layout_marginTop="20dp"
+                    android:ems="10"
+                    android:hint="customerName"
+                    android:inputType="textPersonName" />
+
+                <EditText
+                    android:id="@+id/customerCnic"
+                    android:layout_width="216dp"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginLeft="29dp"
+                    android:layout_marginTop="20dp"
+                    android:ems="10"
+                    android:hint="customerCnic"
+
+                    android:inputType="number" />
+
+                <EditText
+                    android:id="@+id/customerNumber"
+                    android:layout_width="216dp"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginLeft="29dp"
+                    android:layout_marginTop="20dp"
+                    android:ems="10"
+                    android:hint="customerNumber"
+
+                    android:inputType="number" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="29dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginRight="29dp"
+            android:text="Receiver Info" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/rcvrName"
+                    android:layout_width="216dp"
+
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginLeft="29dp"
+                    android:layout_marginTop="20dp"
+                    android:ems="10"
+                    android:hint="rcvrName"
+
+                    android:inputType="textPersonName" />
+
+                <EditText
+                    android:id="@+id/rcvrCnic"
+                    android:layout_width="216dp"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginLeft="29dp"
+                    android:layout_marginTop="20dp"
+                    android:ems="10"
+                    android:hint="rcvrCnic"
+
+                    android:inputType="number" />
+
+                <EditText
+                    android:id="@+id/rcvrNumber"
+                    android:layout_width="216dp"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginLeft="29dp"
+                    android:layout_marginTop="20dp"
+                    android:ems="10"
+                    android:hint="rcvrNumber"
+
+                    android:inputType="number" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:text="choose the vehicle you need" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RadioGroup
+                android:id="@+id/radioGroup2"
+                android:layout_width="340dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:id="@+id/dsettingSmallPickup"
+                    android:layout_width="wrap_content"
+                    android:layout_height="44dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_weight="1"
+                    android:drawableStart="@drawable/small"
+                    android:text="Small Pickup" />
+
+                <RadioButton
+                    android:id="@+id/dsettingMediumTruck"
+                    android:layout_width="wrap_content"
+                    android:layout_height="44dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_weight="1"
+                    android:drawableStart="@drawable/medium"
+                    android:text="medium truck" />
+
+                <RadioButton
+                    android:id="@+id/dsettingLargeTruck"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:layout_weight="1"
+                    android:drawableStart="@drawable/large"
+
+                    android:text="Large Truck" />
+
+            </RadioGroup>
+
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:text="choose the vehicle you need" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp">
+
+
+            <RadioGroup
+                android:id="@+id/radioGroup"
+                android:layout_width="340dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/cashPayment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:layout_weight="1"
+                    android:text="Cash Payment" />
+
+                <RadioButton
+                    android:id="@+id/onlinePayment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="44dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_weight="1"
+                    android:text="Online Payment" />
+
+
+            </RadioGroup>
+
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+
+                <!--   <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/datetxt"
+                    android:layout_width="216dp"
+                    android:layout_height="45dp"
+                    android:layout_marginLeft="29dp"
+                    android:layout_marginTop="20dp"
+                    android:paddingTop="7dp"
+                    android:text="date" />
+
+                <Button
+                    android:id="@+id/date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginTop="20dp"
+                    android:text="set_Date" />
+            </LinearLayout>-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/timetext"
+                        android:layout_width="216dp"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="29dp"
+                        android:layout_marginTop="20dp"
+                        android:hint="time"
+
+                        android:paddingTop="7dp" />
+
+                    <Button
+                        android:id="@+id/time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="40dp"
+                        android:layout_marginTop="20dp"
+                        android:text="set_time" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+
+        <Button
+            android:id="@+id/addItemButton"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:layout_marginTop="12dp"
+            android:background="@color/buttonColor"
+
+            android:text="Add Items"
+            android:textColor="@color/textColor" />
+        <!-- <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginTop="3dp">-->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/itemRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+        <Button
+            android:id="@+id/makeOrder"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:layout_marginTop="6dp"
+            android:background="@color/buttonColor"
+            android:text="BookOrder"
+            android:textColor="@color/textColor" />
+
+        <Button
+            android:id="@+id/track"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="37dp"
+            android:background="@color/buttonColor"
+
+            android:text="Track"
+            android:textColor="@color/textColor" />
+    </LinearLayout>
+
+
+</ScrollView>
+<!--
+
+        <ListView
+            android:id="@+id/addItem"
+            android:layout_width="0dp"
+            android:layout_height="62dp"
+            android:layout_marginStart="42dp"
+            android:layout_marginTop="28dp"
+            android:layout_marginEnd="32dp"
+
+            android:backgroundTint="@color/textColor"
+            android:textColor="@color/textColor"
+            android:textColorHint="@color/textColor"
+            app:layout_constraintEnd_toEndOf="@+id/timetxt"
+            app:layout_constraintEnd_toStartOf="@+id/addItemButton"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/timetxt" />
+
+
+
+            app:layout_constraintTop_toBottomOf="@+id/button4" />
+
+        &lt;!&ndash;
+                    android:onClick="makeOrder"
+        &ndash;&gt;
+
+
+    </android.support.constraint.ConstraintLayout>
+</ScrollView>-->
