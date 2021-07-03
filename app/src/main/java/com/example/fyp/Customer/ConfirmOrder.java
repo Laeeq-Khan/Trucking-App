@@ -130,7 +130,7 @@ public class ConfirmOrder extends AppCompatActivity {
     public void orderVehicle(View view) {
 
 
-        getClosestLocation();
+                getClosestLocation();
 
                 final String userId = FirebaseAuth.getInstance().getCurrentUser().getUid();
                 DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference().child("Requests").child(userId);
@@ -180,85 +180,17 @@ public class ConfirmOrder extends AppCompatActivity {
         DatabaseReference driverlocation = FirebaseDatabase.getInstance().getReference().child("DriversAvailable").child(truckType);
         final DatabaseReference database = FirebaseDatabase.getInstance().getReference().child("Users").child("Drivers");
 
-
-        GeoFire geoFire = new GeoFire(driverlocation);
-        GeoQuery geoQuery = geoFire.queryAtLocation(new GeoLocation(pickupLat, pickUpLon), radius);
-        geoQuery.removeAllListeners();
-
-        geoQuery.addGeoQueryEventListener(new GeoQueryEventListener() {
-            @Override
-            public void onKeyEntered(final String key, GeoLocation location) {
-
-
-                if (count < 15) {
-
-                    driverFoundId = key;
-                    database.addListenerForSingleValueEvent(new ValueEventListener() {
-                        @Override
-                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                            if (dataSnapshot.exists()){
-                                if (dataSnapshot.child(key).child("suspended").getValue(String.class).equals("no")){
-                                    ids.add(driverFoundId);
-                                    Log.d("Id123",""+driverFoundId);
-                                    count++;
-                                    driverfound = true;
-                                }
-                            }
-                        }
-
-                        @Override
-                        public void onCancelled(@NonNull DatabaseError databaseError) {
-
-                        }
-                    });
-
-                }
-            }
-            @Override
-            public void onKeyExited(String key) {
-            }
-            @Override
-            public void onKeyMoved(String key, GeoLocation location) {
-            }
-            @Override
-            public void onGeoQueryReady() {
-                if (radius < 20){
-                if (count < 15) {
-                    radius++;
-                    count = 0;
-                    driverfound=false;
-                    getClosestLocation();
-
-                }
-                }
-            else {
-                if (count>0){
-                    if (ids.size()>0) {
-                        sendRequest();
-                    }
-                }
-                else
-                    Toast.makeText(ConfirmOrder.this, "We Have No Driver In Your Area", Toast.LENGTH_SHORT).show();
-                }
-            }
-
-            @Override
-            public void onGeoQueryError(DatabaseError error) {
-
-            }
-        });
-    }
-
-    ArrayList<RatingSort> newList= new ArrayList<>();
-    public void sendRequest() {
-        for (int i = 0; i<ids.size() ; i++){
-
-            DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference().child("Users").child("Drivers").child(ids.get(i));
-        databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
+        database.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if (dataSnapshot.exists()){
-                    newList.add(new RatingSort(dataSnapshot.getKey(),Math.round(dataSnapshot.child("rating").getValue(Float.class))));
+                    //if (dataSnapshot.child(key).child("suspended").getValue(String.class).equals("no")){
+                        ids.add(driverFoundId);
+                        Log.d("Id123",""+driverFoundId);
+                        count++;
+                        driverfound = true;
+                    sendRequest();
+                   // }
                 }
             }
 
@@ -267,9 +199,94 @@ public class ConfirmOrder extends AppCompatActivity {
 
             }
         });
+//        GeoFire geoFire = new GeoFire(driverlocation);
+//        GeoQuery geoQuery = geoFire.queryAtLocation(new GeoLocation(pickupLat, pickUpLon), radius);
+//        geoQuery.removeAllListeners();
 
+//        geoQuery.addGeoQueryEventListener(new GeoQueryEventListener() {
+//            @Override
+//            public void onKeyEntered(final String key, GeoLocation location) {
+//
+//
+//              //  if (count < 15) {
+//
+//                    driverFoundId = key;
+//                    database.addListenerForSingleValueEvent(new ValueEventListener() {
+//                        @Override
+//                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+//                            if (dataSnapshot.exists()){
+//                                if (dataSnapshot.child(key).child("suspended").getValue(String.class).equals("no")){
+//                                    ids.add(driverFoundId);
+//                                    Log.d("Id123",""+driverFoundId);
+//                                    count++;
+//                                    driverfound = true;
+//                                }
+//                            }
+//                        }
+//
+//                        @Override
+//                        public void onCancelled(@NonNull DatabaseError databaseError) {
+//
+//                        }
+//                    });
+//
+//              //  }
+//            }
+//            @Override
+//            public void onKeyExited(String key) {
+//            }
+//            @Override
+//            public void onKeyMoved(String key, GeoLocation location) {
+//            }
+//            @Override
+//            public void onGeoQueryReady() {
+//                sendRequest();
+//
+//            }
+////                if (radius < 100){
+////                if (count < 15) {
+////                    radius++;
+////                    count = 0;
+////                    driverfound=false;
+////                    getClosestLocation();
+////
+////                }
+////                }
+////            else {
+////                if (count>0){
+////                    if (ids.size()>0) {
+////                    }
+////                }
+////                else
+////                    Toast.makeText(ConfirmOrder.this, "We Have No Driver In Your Area", Toast.LENGTH_SHORT).show();
+////                }
+////            }
+//
+//            @Override
+//            public void onGeoQueryError(DatabaseError error) {
+//
+//            }
+//        });
+    }
+
+    ArrayList<RatingSort> newList= new ArrayList<>();
+    public void sendRequest() {
+        for (int i = 0; i<ids.size() ; i++){
+            DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference().child("Users").child("Drivers").child(ids.get(i));
+            databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                    if (dataSnapshot.exists()){
+                        newList.add(new RatingSort(dataSnapshot.getKey(),Math.round(dataSnapshot.child("rating").getValue(Float.class))));
+                    }
+                }
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                }
+            });
        }
-       sendRequest1();
+        sendRequest1();
         DatabaseReference driverReference = FirebaseDatabase.getInstance().getReference().child("Users").child("Drivers");
 
         for (int i = 0; i<ids.size()/2 ; i++){

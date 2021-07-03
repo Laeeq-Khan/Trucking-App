@@ -22,6 +22,8 @@ Button xyz;
         setContentView(R.layout.activity_company_log_in);
         companyEmail = findViewById(R.id.companyEmail);
         companyPassword = findViewById(R.id.companyPassword);
+        companyEmail.setText("comapny@gmail.com");
+        companyPassword.setText("company");
         findViewById(R.id.companyLogIn).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

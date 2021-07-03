@@ -9,8 +9,7 @@
     android:layout_height="match_parent"
     android:fillViewport="false">
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
@@ -139,7 +138,8 @@
                     android:layout_marginTop="20dp"
                     android:ems="10"
                     android:hint="unique Name For Order"
-                    android:inputType="textPersonName" />
+                    android:inputType="textPersonName"
+                    android:text="123456" />
 
                 <EditText
                     android:id="@+id/customerName"
@@ -150,7 +150,8 @@
                     android:layout_marginTop="20dp"
                     android:ems="10"
                     android:hint="customerName"
-                    android:inputType="textPersonName" />
+                    android:inputType="textPersonName"
+                    android:text="Laeeq" />
 
                 <EditText
                     android:id="@+id/customerCnic"
@@ -162,7 +163,8 @@
                     android:ems="10"
                     android:hint="customerCnic"
 
-                    android:inputType="number" />
+                    android:inputType="number"
+                    android:text="383022534466" />
 
                 <EditText
                     android:id="@+id/customerNumber"
@@ -174,7 +176,8 @@
                     android:ems="10"
                     android:hint="customerNumber"
 
-                    android:inputType="number" />
+                    android:inputType="number"
+                    tools:text="12345" />
 
             </LinearLayout>
 
@@ -210,7 +213,8 @@
                     android:ems="10"
                     android:hint="rcvrName"
 
-                    android:inputType="textPersonName" />
+                    android:inputType="textPersonName"
+                    android:text="12345" />
 
                 <EditText
                     android:id="@+id/rcvrCnic"
@@ -222,7 +226,8 @@
                     android:ems="10"
                     android:hint="rcvrCnic"
 
-                    android:inputType="number" />
+                    android:inputType="number"
+                    android:text="123456" />
 
                 <EditText
                     android:id="@+id/rcvrNumber"
@@ -234,7 +239,8 @@
                     android:ems="10"
                     android:hint="rcvrNumber"
 
-                    android:inputType="number" />
+                    android:inputType="number"
+                    android:text="123456" />
 
             </LinearLayout>
         </androidx.cardview.widget.CardView>
@@ -272,6 +278,7 @@
                     android:layout_height="44dp"
                     android:layout_marginTop="2dp"
                     android:layout_weight="1"
+                    android:checked="true"
                     android:drawableStart="@drawable/medium"
                     android:text="medium truck" />
 
@@ -315,6 +322,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="2dp"
                     android:layout_weight="1"
+                    android:checked="true"
                     android:text="Cash Payment" />
 
                 <RadioButton
@@ -377,7 +385,8 @@
                         android:layout_marginTop="20dp"
                         android:hint="time"
 
-                        android:paddingTop="7dp" />
+                        android:paddingTop="7dp"
+                        tools:text="12:45" />
 
                     <Button
                         android:id="@+id/time"

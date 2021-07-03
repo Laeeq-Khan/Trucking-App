@@ -34,8 +34,6 @@
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyD8_QLGS15rQ4kyQ-FAjwnicKS3Sd6qVaM" />
-        <meta-data android:name="com.google.android.gms.version"
-            android:value="@integer/google_play_services_version" />
 
         <activity android:name=".Company.ShowDriverDetails"
             android:label="DriverDetails"/>

@@ -26,7 +26,7 @@
 
                 android:src="@drawable/arshad"
                 android:visibility="visible"
-                 />
+                app:srcCompat="@drawable/add_driver" />
         </LinearLayout>
 
         <TextView

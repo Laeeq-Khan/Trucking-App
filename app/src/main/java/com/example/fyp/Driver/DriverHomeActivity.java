@@ -42,6 +42,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+
 public class DriverHomeActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, com.google.android.gms.location.LocationListener, GoogleApiClient.OnConnectionFailedListener , GoogleApiClient.ConnectionCallbacks{
 
@@ -61,7 +62,7 @@ public class DriverHomeActivity extends AppCompatActivity
         setSupportActionBar(toolbar);
         getLocationPermission();
         buildGoogleApiClient();
-        Uid=FirebaseAuth.getInstance().getCurrentUser().getUid();
+        Uid= FirebaseAuth.getInstance().getCurrentUser().getUid();
         Log.d("iamhere",Uid);
 
         final DatabaseReference driver= FirebaseDatabase.getInstance().getReference().child("Users").child("Drivers").child(Uid);
